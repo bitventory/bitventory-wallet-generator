@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Ken Burford
+Main-Class: com.bitventory.tools.WalletGenerator
+Class-Path: bin/ lib/bcprov-jdk16-146.jar lib/slf4j-api-1.6.2.jar

@@ -1,0 +1,70 @@
+=======================================
+Bitventory.com Offline Wallet Generator
+=======================================
+
+Description
+-----------
+
+The Bitventory Wallet Generator is a tool for generating a wallet.dat file
+containing the private keys used by the Bitventory.com wallet service. These
+keys can be absolutely derived using the account email address, the user's
+secret passphrase, and the shared secret established on account creation.
+
+NOTE: If you lost your shared secret or never wrote it down, the only
+way to obtain it is to send an email to:
+
+   secrets@bitventory.com
+
+We will verify your identity and then provide the secret over a secure
+channel. Apologies for the hassle, but we prefer to be paranoid. :)
+
+
+Requirements
+------------
+
+This README assumes you're using a POSIX-compliant system such as a
+GNU/Linux distribution of some sort (Ubuntu, Debian, Fedora, etc). If
+you're using Windows, you'll need to obtain a package called Cygwin
+and figure this out yourself.
+
+If you'd like to contribute information on how to use this tool
+with Cygwin on Windows systems, please send me a pull request.
+
+You'll need the Java 6 JDK.
+
+PACKAGES: pywallet (https://github.com/jackjack-jj/pywallet)
+
+
+Instructions
+------------
+
+To install the tool, please see INSTALL in the source directory.
+
+To use this application, please invoke it as:
+
+java -jar WalletGenerator.jar [NETWORK] [EMAIL] [PASSWORD] [SECRET]
+
+...where:
+
+NETWORK is 'prodnet' for the production network, or 'testnet' for the test network.
+EMAIL is your account e-mail address.
+PASSWORD is your applet signing password (NOT your password for logging into the site).
+SECRET is your shared secret, a long 128 character token given to you on account
+sign up.
+
+This tool will output three files:
+
+public.keys: Contains an ordered list of your addresses
+private.keys: Contains an ordered list of your private keys in base58
+pywallet_doimport.sh:
+	A shell script which invokes pywallet and uses it to import
+	all of your private keys into the official Bitcoin client's
+	"wallet.dat" file.
+
+Example invocation:
+	java -jar WalletGenerator.jar prodnet me@bitventory.com mypass 000000000...
+
+For help using this tool, feel free to shoot an email to:
+    support@bitventory.com
+
+

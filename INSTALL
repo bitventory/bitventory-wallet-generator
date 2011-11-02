@@ -1,0 +1,30 @@
+=======================================
+Bitventory.com Offline Wallet Generator
+=======================================
+
+Installation
+------------
+
+To compile the Wallet Generator from source and build a jar for
+running it, simply ensure that JDK6 is installed and
+run:
+
+    ./buildGen.sh
+
+This will produce a file called WalletGenerator.jar
+which you can use.
+
+Next, to actually import the private keys into Bitcoin,
+you will need to obtain and install the pywallet utility.
+
+Start by pulling the source:
+
+    git clone https://github.com/jackjack-jj/pywallet
+
+Then, copy pywallet into the Wallet Generator directory:
+
+	cp pywallet/pywallet.py .
+
+For more information on how to
+use the package, consult the README.
+
